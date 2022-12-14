@@ -30,6 +30,7 @@ function assemble_brewery_address_string ($brewery) {
 
 function get_brewery ($city) {
     $array = get_breweries_from_city($city);
+    if (count($array) === 0) return "Sorry, we could not find a brewery in the city you are located.";
     $random_brewery = get_random_brewery_from_array($array);
     $random_brewery_address = assemble_brewery_address_string($random_brewery);
     return $random_brewery_address;
