@@ -1,0 +1,1 @@
+when adding webhook to twilio, use the setting HTTP GET
