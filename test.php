@@ -19,7 +19,7 @@ foreach ($test_urls as $url) {
 }
 
 /*
-
-Currently the outputs are dumped to be manually inspected, but a natural extension of this would be to have the results be automatically graded as pass/fail
-
+Stuff I would add if I wanted to extend testing: 
+- testing for open/close times
+- automatic pass/fail as opposed to dumping the result for manual review
 */
