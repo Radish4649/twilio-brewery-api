@@ -5,7 +5,7 @@ use Twilio\TwiML\VoiceResponse;
 
 // Start our TwiML response
 $response = new VoiceResponse;
-$city = $_GET['FromCity'];
+$city = array_key_exists("FromCity", $_GET) ? $_GET['FromCity'] : "";
 $response_message = get_brewery($city);
 // Read a message aloud to the caller
 $response->say(

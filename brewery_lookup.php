@@ -2,6 +2,7 @@
 require_once dirname(__FILE__) . '/vendor/autoload.php';
 
 function get_breweries_from_city ($city) {
+    if (empty($city)) return false;
     $response = WpOrg\Requests\Requests::get("https://api.openbrewerydb.org/breweries?by_city=$city", array('Accept' => 'application/json'));
     $response_object = json_decode($response->body);
     return $response_object;
@@ -30,7 +31,7 @@ function assemble_brewery_address_string ($brewery) {
 
 function get_brewery ($city) {
     $array = get_breweries_from_city($city);
-    if (count($array) === 0) return "Sorry, we could not find a brewery in the city you are located.";
+    if (empty($array)) return "Sorry, we could not find a brewery in the city you are located.";
     $random_brewery = get_random_brewery_from_array($array);
     $random_brewery_address = assemble_brewery_address_string($random_brewery);
     return $random_brewery_address;
