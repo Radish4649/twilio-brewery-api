@@ -2,9 +2,9 @@
 
 ## Files:
 
-index.php: Main file, responds to the inbound call
-brewery_lookup.php: extracted logic for finding and formatting the brewery address
-helper.php: extracted logic for determining times
+- index.php: Main file, responds to the inbound call
+- brewery_lookup.php: extracted logic for finding and formatting the brewery address
+- helper.php: extracted logic for determining times
 
 ## Features:
 
