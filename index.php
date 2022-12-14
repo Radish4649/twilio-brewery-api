@@ -4,10 +4,10 @@ use Twilio\TwiML\VoiceResponse;
 
 // Start our TwiML response
 $response = new VoiceResponse;
-$zipcode = $_GET['FromZip'];
+$city = $_GET['FromCity'];
 // Read a message aloud to the caller
 $response->say(
-    $zipcode, 
+    $city, 
     array("voice" => "alice")
 );
 
