@@ -1,13 +1,15 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/brewery_lookup.php';
 use Twilio\TwiML\VoiceResponse;
 
 // Start our TwiML response
 $response = new VoiceResponse;
 $city = $_GET['FromCity'];
+$response_message = get_brewery($city);
 // Read a message aloud to the caller
 $response->say(
-    $city, 
+    $response_message, 
     array("voice" => "alice")
 );
 
